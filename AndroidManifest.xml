@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.ProTech">
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.DayNight">
+        <activity android:name="com.example.android.ProTech.keyActivity"></activity>
+
+        <service
+            android:name="com.example.android.ProTech.keyboard"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <activity android:name="com.example.android.ProTech.prefActivity"
+            android:label="@string/app_name"/>
+        <activity android:name="com.example.android.ProTech.trustActivity" />
+        <activity
+            android:name="com.example.android.ProTech.menuActivity"
+            android:parentActivityName="com.example.android.ProTech.startActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.ProTech.startActivity" />
+        </activity>
+        <activity android:name="com.example.android.ProTech.startActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.android.ProTech.vpnService.vPNActivity"
+            android:parentActivityName="com.example.android.ProTech.menuActivity" />
+        <activity
+            android:name="com.example.android.ProTech.discoNetActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/app_name" />
+
+        <service
+            android:name="com.example.android.ProTech.vpnService.vPNService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

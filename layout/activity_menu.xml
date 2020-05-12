@@ -1,0 +1,49 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menuA"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <Button
+        android:id="@+id/button_netcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_2"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessage2"
+        android:text="@string/button_netcon"
+        />
+
+    <Button
+        android:id="@+id/button_VpnServ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_netcon"
+        android:onClick="sendMessage4"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_vpnServ"
+        />
+
+    <Button
+        android:id="@+id/button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_VpnServ"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessage1"
+        android:text="@string/button_exit"
+        />
+
+</RelativeLayout>
